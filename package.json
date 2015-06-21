@@ -1,0 +1,39 @@
+{
+  "name": "rectangles-intersect",
+  "version": "0.0.0",
+  "description": "Determine if two rectangles intersect each other.",
+  "main": "rectangles-intersect.js",
+  "scripts": {
+    "test": "mocha test/test.js",
+    "build-debug": "browserify rectangles-intersect.js --debug --standalone rectanglesIntersect | exorcist dist/rectangles-intersect.js.map > dist/rectangles-intersect.js",
+    "build-min": "browserify rectangles-intersect.js --standalone rectanglesIntersect | uglifyjs -c -m > dist/rectangles-intersect.min.js",
+    "build": "npm run build-debug && npm run build-min"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geosquare/rectangles-intersect"
+  },
+  "keywords": [
+    "rectangle",
+    "intersect",
+    "overlap",
+    "geometry"
+  ],
+  "author": "Gagan Bansal <gaganbansal123@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/geosquare/rectangles-intersect/issues"
+  },
+  "homepage": "https://github.com/geosquare/rectangles-intersect",
+  "devDependencies": {
+    "browserify": "^8.1.1",
+    "chai": "^1.10.0",
+    "exorcist": "^0.1.6",
+    "mocha": "^2.1.0",
+    "uglify-js": "^2.4.16"
+  },
+  "dependencies": {
+    "check-point-in-rectangle": "^0.1.0",
+    "line-segments-intersect": "0.0.0"
+  }
+}
